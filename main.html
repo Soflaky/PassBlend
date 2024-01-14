@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    
+    <title>Password Generator</title>
+</head>
+<body>
+    <div class="container">
+        <h1>PassBlend</h1>
+        
+        <div class="section">
+            <h2>Your Name</h2>
+            <input type="text" id="userName" placeholder="Enter your name">
+            <button onclick="generateRandomName()">Generate Random Name</button>
+            <p id="randomName">Random Name: </p>
+        </div>
+
+        <div class="section">
+            <h2>Enter a Year</h2>
+            <input type="number" id="userYear" placeholder="Enter a year">
+            <button onclick="generateRandomYear()">Generate Random Year</button>
+            <p id="randomYear">Random Year: </p>
+        </div>
+
+        <div class="section">
+            <h2>Generate Password</h2>
+            <label for="passwordLength">Password Length: <span id="passwordLengthValue">12</span></label>
+            <input type="range" id="passwordLength" min="8" max="32" value="12" oninput="updatePasswordLength()">
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="includeUppercase" checked>
+                <input type="checkbox" id="includeSymbols" checked>
+                <input type="checkbox" id="includeNumbers" checked>
+            </div>
+            <div class="label-group">
+                <label for="includeUppercase">ABC</label>
+                <label for="includeSymbols">&nbsp;%&$</label>
+                <label for="includeNumbers">&nbsp; 123</label>
+            </div>
+
+            <button onclick="generateRandomPassword()">Generate Password</button>
+            <p id="randomPassword">Your New Password: </p>
+            
+            <!-- Small button linking to another website -->
+            <a href="https://www.passwordmonster.com/"  target="_blank">
+                <button type="button">Test your new password</button>
+            </a>
+        </div>
+
+        <!-- New section for password generator idea and tips -->
+        <div class="password-ideas">
+            <h2>PassBlend   Idea</h2>
+            <p>Generate unique and secure passwords by blending your name and a significant year in your life. Customize the length and include different character types for added security ,non-guessable passwords with features like password strength testing and premium offerings can offer users enhanced security and educational resources. Password strength testing empowers users to make informed decisions about online security. Offering premium features for free sets a website apart and attracts more visitors, fostering a positive reputation .</p>
+        </div>
+
+        <div class="password-tips">
+            <h2>Password Tips</h2>
+            <div class="tip">
+                <h3>1. Length Matters</h3>
+                <p>Use passwords that are at least 12 characters long. Longer passwords are generally more secure.</p>
+            </div>
+            <div class="tip">
+                <h3>2. Mix Characters</h3>
+                <p>Include a mix of uppercase and lowercase letters, numbers, and symbols for a stronger password.</p>
+            </div>
+            <div class="tip">
+                <h3>3. Avoid Common Words</h3>
+                <p>Avoid using easily guessable words or phrases . Opt for a combination of random names and characters.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script>
+        function updatePasswordLength() {
+            const passwordLengthInput = document.getElementById("passwordLength");
+            const passwordLengthValue = document.getElementById("passwordLengthValue");
+            passwordLengthValue.textContent = passwordLengthInput.value;
+        }
+    </script>
+</body>
+</html>
